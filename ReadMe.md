@@ -29,3 +29,7 @@ in `qtl2cran/bin/windows/....`
 
 8. Finally, I tar the `qtl2cran` directory, move it to the
 [R/qtl](https://rqtl.org) web server, and then unpack it there.
+
+9. I then send an announcement of the new version, at which point I
+immediately find a bug which makes me have to go through this process
+again.
