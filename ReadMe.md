@@ -2,28 +2,30 @@
 
 Use the R package [miniCRAN](https://github.com/andrie/miniCRAN) to
 set up a mini-CRAN for folks to download
-[R/qtl2](http://kbroman.org/qtl2). Currently
-[miniCRAN](https://github.com/andrie/miniCRAN)
-only works for source and
-windows. I also need it for macosx-el-capitan; while it doesn't work,
-there's a pull request that fixes the problem.
+[R/qtl2](http://kbroman.org/qtl2).
 
-For the R/qtl2 packages, need the source `.tar.gz` files plus the
-MacOS `.tgz` files (which I build locally) plus Windows `.zip` files
-(which I create using the [Win-builder
-tool](http://win-builder.r-project.org/upload.aspx)).
+1. First create the subdirectory `qtl2cran/`
 
+2. Run [`miniCRAN.R`](miniCRAN.R), which downloads all of the R/qtl2
+depenedencies and puts them in the right place within `qtl2cran/`
 
-- [`miniCRAN.R`](miniCRAN.R) creates the CRAN-like repo for packages,
-  containing all of the R/qtl2 dependencies
+3. Use `R CMD build` to build the `.tar.gz` files for the R/qtl2
+packages and put them in `qtl2cran/src/contrib/`
 
-- [`tar_Rlibs.R`](tar_Rlibs.R) tars my local compiled Mac versions of
-  the R/qtl2 packages (after I've installed them with `R CMD INSTALL`)
-  and puts them in the right place
+4. Use `R CMD INSTALL` to install the R/qtl2 packages locally (on my
+Mac, in `~/Rlibs/`).
 
-- [`updatePACKfiles.R`](updatePACKfiles.R) updates the `PACKAGE`,
-  `PACKAGE.gz`, and `PACKAGE.rds` files using
-  `tools::write_PACKAGES()`, once all of the packages are in place.
+5. Run [`tar_Rlibs.R`](tar_Rlibs.R) to tar the local compiled Mac versions of
+the R/qtl2 packages and put them in `qtl2cran/bin/macosx/....`
 
-I then tar this directory and use `scp` to move it to my
+6. Use the
+[win-builder tool](http://win-builder.r-project.org/upload.aspx) to
+create compiled Windows versions of the R/qtl2 packages, and put them
+in `qtl2cran/bin/windows/....`
+
+7. Run [`updatePACKfiles.R`](updatePACKfiles.R) to update the `PACKAGE`,
+`PACKAGE.gz`, and `PACKAGE.rds` files using
+`tools::write_PACKAGES()`.
+
+8. Finally, I tar the `qtl2cran` directory, move it to the
 [R/qtl](https://rqtl.org) web server, and then unpack it there.
