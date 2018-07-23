@@ -7,7 +7,7 @@ library(miniCRAN)
 repos <- "https://cran.rstudio.com"
 
 pkgs <- c("Rcpp", "RcppEigen", "yaml", "jsonlite", "data.table",
-          "knitr", "rmarkdown", "qtl", "qtlcharts", "optparse", "RSQLite")
+          "knitr", "rmarkdown", "qtl", "qtlcharts", "optparse", "RSQLite", "fst")
 pkgList <- pkgDep(pkgs, repos=repos, type="source", suggests=FALSE)
 
 makeRepo(pkgList, path="qtl2cran", repos=repos, type=c("source", "win.binary", "mac.binary.el-capitan"))
