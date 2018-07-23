@@ -12,5 +12,5 @@ setwd("~/Rlibs")
 for(i in seq_along(pkg)) {
     cat(" -Creating", tgzfiles[i], "\n")
     system(paste("tar czf", tgzfiles[i], pkg[i]))
-    system(paste("mv", tgzfiles[i], "~/Code/Rqtl2/miniCRAN/qtl2cran/bin/macosx/el-capitan/contrib/3.4/"))
+    system(paste("mv", tgzfiles[i], "~/Code/Rqtl2/miniCRAN/qtl2cran/bin/macosx/el-capitan/contrib/3.5/"))
 }
