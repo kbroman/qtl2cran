@@ -11,3 +11,4 @@ pkgs <- c("Rcpp", "RcppEigen", "yaml", "jsonlite", "data.table",
 pkgList <- pkgDep(pkgs, repos=repos, type="source", suggests=FALSE)
 
 makeRepo(pkgList, path="qtl2cran", repos=repos, type=c("source", "win.binary", "mac.binary.el-capitan"))
+makeRepo(pkgList, path="qtl2cran", repos=repos, type=c("win.binary", "mac.binary.el-capitan"), Rversion="3.4")
