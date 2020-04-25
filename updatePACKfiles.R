@@ -9,3 +9,5 @@ write_PACKAGES("qtl2cran/bin/windows/contrib/3.5", type="win.binary", verbose=TR
 write_PACKAGES("qtl2cran/bin/macosx/el-capitan/contrib/3.5", type="mac.binary", verbose=TRUE)
 write_PACKAGES("qtl2cran/bin/windows/contrib/3.6", type="win.binary", verbose=TRUE)
 write_PACKAGES("qtl2cran/bin/macosx/el-capitan/contrib/3.6", type="mac.binary", verbose=TRUE)
+write_PACKAGES("qtl2cran/bin/windows/contrib/4.0", type="win.binary", verbose=TRUE)
+write_PACKAGES("qtl2cran/bin/macosx/el-capitan/contrib/4.0", type="mac.binary", verbose=TRUE)
